@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pyton-notes-app-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: python-notes-app
+  template:
+    metadata:
+      labels:
+        app: python-notes-app
+    spec:
+      containers:
+      - name: python-notes-app
+        image: sufibaba6629/sufiprofile:v1
+        ports:
+        - containerPort: 80
+
